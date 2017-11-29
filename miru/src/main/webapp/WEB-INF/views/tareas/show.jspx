@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_luisusr_miru_Tarea" object="${tarea}" path="/tareas" z="FYehyP8roK3i6ijtFzRkTdnOqg8=">
+        <field:display field="titulo" id="s_es_luisusr_miru_Tarea_titulo" object="${tarea}" z="NnnDBK1cPr+2zo+rklWY0zap+Gw="/>
+        <field:display date="true" dateTimePattern="${tarea_limite_date_format}" field="limite" id="s_es_luisusr_miru_Tarea_limite" object="${tarea}" z="RhPq1qQ1wQd0TV0tv2vKDZQObuI="/>
+        <field:display field="prioridad" id="s_es_luisusr_miru_Tarea_prioridad" object="${tarea}" z="lSm2Pvl+ojJqQFACOb60U5agGig="/>
+    </page:show>
+</div>
