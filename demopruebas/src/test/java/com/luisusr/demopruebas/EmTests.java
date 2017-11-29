@@ -13,6 +13,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.luisusr.demopruebas.dto.EmpDTO;
 import com.luisusr.demopruebas.model.Datos;
 import com.luisusr.demopruebas.model.Datosser;
 import com.luisusr.demopruebas.model.Emp;
@@ -113,10 +114,12 @@ public class EmTests  {
 		Datosser data = new Datosser();
 		data.setFRegistro(new Date());
 		//byte[] bytes = {69};
-		data.setContenido( new byte[1]);
+		//data.setContenido(miServicio.serialize(new EmpDTO()));
+		data.setContenido(new byte[1]);
 		getHibernateTemplate.save(data);
-		
-		//getHibernateTemplate.update(data);
+		data.setContenido(miServicio.serialize(new EmpDTO
+				("AA", "BB", "CC", "DD", "EE", "FF", "GG", "HH", "II", "JJ")));
+		getHibernateTemplate.update(data);
 		
 	}
 
