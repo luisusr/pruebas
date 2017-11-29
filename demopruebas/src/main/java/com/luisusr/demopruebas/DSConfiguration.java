@@ -43,7 +43,7 @@ public class DSConfiguration {
 		//localSessionFactoryBean.setEntityInterceptor(new AuditInterceptor());
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "none");
-		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
+		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		localSessionFactoryBean.setHibernateProperties(hibernateProperties);
 		String[] packagesToScan = { "com.luisusr.demopruebas.model" };
