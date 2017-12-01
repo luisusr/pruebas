@@ -33,7 +33,8 @@ public class WelcomeController {
 	
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public ModelAndView manejarWelcome(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		log.info("welc");
+		log.info("welcmmmmaaavvvvvvv");
+		log.info(""+1+1);
 		return new ModelAndView();
     }
 	
