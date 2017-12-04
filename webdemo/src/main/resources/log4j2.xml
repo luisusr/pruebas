@@ -14,12 +14,12 @@
            
 		</logger>    
     
-		<logger name="org.hibernate.SQL" level="DEBUG" additivity="true">
+		<logger name="org.hibernate.SQL" level="DEBUG" additivity="false">
             <AppenderRef ref="CONSOLE" />
            
         </logger>
         
-        <Root level="info">
+       <Root level="info">
             <AppenderRef ref="CONSOLE"/>
             
         </Root>

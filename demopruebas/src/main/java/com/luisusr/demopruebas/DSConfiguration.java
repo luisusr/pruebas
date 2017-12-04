@@ -50,8 +50,9 @@ public class DSConfiguration {
 		localSessionFactoryBean.setPackagesToScan(packagesToScan);
 		return localSessionFactoryBean;
 	}
-	
-//	@Bean
+	// la bota ya proporciona transaccionalidad desde la bota
+// TODO corroborar la prueva en una forma dentro del controlador ya que solo se ha probado dentro del test
+//	@Bean  //
 //	public HibernateTransactionManager transactionManager() {
 //		HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager();
 //		hibernateTransactionManager.setSessionFactory(sessionFactory().getObject());
