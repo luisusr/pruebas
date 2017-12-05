@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.luisusr.webdemo.configurers;
 
 import java.util.Properties;
