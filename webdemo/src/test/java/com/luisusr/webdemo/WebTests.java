@@ -3,6 +3,10 @@
  */
 package com.luisusr.webdemo;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Date;
 
 import org.apache.commons.logging.Log;
@@ -58,9 +62,23 @@ public class WebTests {
 		//data.setContenido(miServicio.serialize(new EmpDTO()));
 		data.setContenido(new byte[1]);
 		getHibernateTemplate.save(data);
-		data.setContenido(new byte[2]);
+		data.setContenido(serialize(getClass()));
 		getHibernateTemplate.update(data);
 		
+	}
+	
+	public byte[] serialize(Serializable obj) {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		  
+	    try {
+	    	  ObjectOutputStream oos = new ObjectOutputStream(baos);
+			oos.writeObject(obj);
+		} catch (IOException e) {
+			log.error("ocurrio un error al serializar el objeto : "+e);
+				if(e.getMessage()!=null)
+					log.error(e.getMessage());
+		}
+	    return baos.toByteArray();
 	}
 
 }
