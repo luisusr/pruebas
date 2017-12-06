@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.luisusr.webdemo;
 
 import java.io.ByteArrayOutputStream;
@@ -9,11 +7,16 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mock.jndi.SimpleNamingContextBuilder;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,7 +24,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.AnnotationConfigWebContextLoader;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import com.luisusr.webdemo.configurers.DSConfiguration;
 import com.luisusr.webdemo.configurers.MvcConfiguration;
@@ -41,10 +43,31 @@ public class WebTests {
 	
 	private static final Log log = LogFactory.getLog(WebTests.class);
 	
+	@BeforeClass
+	 public static void contextSetup () throws NamingException
+	   {
+	       SimpleNamingContextBuilder builder = SimpleNamingContextBuilder.emptyActivatedContextBuilder();
+//	       DriverManagerDataSource dataSource = new DriverManagerDataSource( "jdbc:db2://localhost:50000/PES", "luis", "pass");
+//	       dataSource.setDriverClassName("com.ibm.db2.jcc.DB2Driver");
+	       builder.bind("jdbc/log", log);
+	   }
+	
 	@Test
 	public void probarContestos()
 	{
-		log.info("contexted!");
+		
+		try {
+			InitialContext ini = new InitialContext();
+			log.info("contexted!");
+			Log lukuplog = (Log) ini.lookup("jdbc/log");
+			log.info("lookuped!");
+			
+			lukuplog.info("este esta logeando con el lucuuuupedddd!!!");
+			
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
 	}
 	
 	
