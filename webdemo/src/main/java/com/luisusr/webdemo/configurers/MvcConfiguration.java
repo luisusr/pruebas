@@ -13,7 +13,7 @@ import org.springframework.web.servlet.view.JstlView;
  
 @Configuration
 @EnableWebMvc
-@ComponentScan
+@ComponentScan(basePackages = {"com.luisusr.webdemo"})
 public class MvcConfiguration extends WebMvcConfigurerAdapter
 {
 	
