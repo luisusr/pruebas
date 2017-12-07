@@ -72,7 +72,6 @@ public class WebTests {
 			lukuplog.info("este esta logeando con el lucuuuupedddd!!!");
 			
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
 	}
