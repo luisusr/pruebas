@@ -33,8 +33,8 @@ public void onStartup(ServletContext servletContext) throws ServletException {
     servletContext.addListener(new ContextLoaderListener(context));
     ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", new DispatcherServlet(context));
     dispatcher.setLoadOnStartup(1);
-    dispatcher.addMapping("/*");
-    log.info("se inicializa/instancia el servlet despachador");
+    dispatcher.addMapping("/plantillaMatriz/*");
+    log.info("se inicializa/instancia el servlet despachador PM");
 }
 
 private AnnotationConfigWebApplicationContext getContext() {
