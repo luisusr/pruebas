@@ -5,7 +5,7 @@ public class WebInitializer
 }
 ///**
 // * este es otra forma de inicializar por javaconfig extendiendo de 
-//AbstractAnnotationConfigDispatcherServletInitializer aunque me parece que es mejo la otra
+//AbstractAnnotationConfigDispatcherServletInitializer aunque me parece que es mejor la otra
 // ya que seguimos el mismo principio del web.xml por escaneo de paquetes mediante el servlet despachador
 // */
 //package com.luisusr.webdemo;
