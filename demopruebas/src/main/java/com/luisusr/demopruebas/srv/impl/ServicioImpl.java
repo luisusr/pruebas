@@ -11,7 +11,7 @@ import java.io.Serializable;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.luisusr.demopruebas.EmTests;
+
 import com.luisusr.demopruebas.srv.Servicio;
 
 /**
@@ -20,7 +20,7 @@ import com.luisusr.demopruebas.srv.Servicio;
  */
 public class ServicioImpl implements Servicio {
 	
-	private static final Log log = LogFactory.getLog(EmTests.class);
+	private static final Log log = LogFactory.getLog(ServicioImpl.class);
 
 	/* (non-Javadoc)
 	 * @see com.luisusr.demopruebas.srv.Service#getText()
