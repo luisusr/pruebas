@@ -93,12 +93,14 @@ public class EmTests  {
 		Datos data = new Datos();
 		data.setFRegistro(new Date());
 		log.info("get id B-> "+data.getIdData());
+		log.info("get fregistro B-> "+data.getFRegistro());
 		data.setDescripcion("s");
 		//data.setDescripcion("nueva data del reg: "+data.getIdData());
 		//transactionManager.getSessionFactory().getCurrentSession().save(data);
 		getHibernateTemplate.save(data);
 		data.setDescripcion("nueva data del reg: "+data.getIdData());
 		log.info("get id A-> "+data.getIdData());
+		log.info("get fregistro A-> "+data.getFRegistro());
 		getHibernateTemplate.update(data);
 		
 	}

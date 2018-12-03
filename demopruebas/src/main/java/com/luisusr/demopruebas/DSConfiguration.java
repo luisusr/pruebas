@@ -24,7 +24,7 @@ public class DSConfiguration {
 	public DataSource dsDataSource(){
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-	    ds.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
+	    ds.setUrl("jdbc:oracle:thin:@localhost:1522:orcl");
 	    ds.setUsername("POW_REP");
 	    ds.setPassword("POW_REP");
 	    ds.setTestOnBorrow(true);
@@ -42,7 +42,7 @@ public class DSConfiguration {
 		localSessionFactoryBean.setDataSource(dsDataSource());
 		//localSessionFactoryBean.setEntityInterceptor(new AuditInterceptor());
 		Properties hibernateProperties = new Properties();
-		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "none");
+		hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		localSessionFactoryBean.setHibernateProperties(hibernateProperties);

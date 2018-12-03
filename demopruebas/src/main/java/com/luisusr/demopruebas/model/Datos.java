@@ -48,7 +48,7 @@ public class Datos implements java.io.Serializable {
 		this.idData = idData;
 	}
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "F_REGISTRO", nullable = false, length = 7)
 	public Date getFRegistro() {
 		return this.FRegistro;
